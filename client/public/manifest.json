@@ -1,0 +1,15 @@
+{
+  "short_name": "Books with MERN",
+  "name": "Google Books MERN",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#333333",
+  "background_color": "#ffffff"
+}
