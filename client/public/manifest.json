@@ -6,7 +6,12 @@
       "src": "favicon.png",
       "sizes": "64x64",
       "type": "image/png"
-    }
+    },
+		{
+			"src": "books-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
   ],
   "start_url": "./index.html",
   "display": "standalone",
