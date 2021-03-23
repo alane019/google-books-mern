@@ -2,14 +2,6 @@ import React, { useState, useEffect} from "react";
 
 let userResponse = "";
 let searchResults = [];
-let imgs = document.getElementsByTagName("img");
-
-let divElm = document.createElement("div");
-img.forEach((itm) => {
-    elementnode.insertBefore(newNode, referenceNode);
-    itm.appendChild(divElm);  
-    itm.insertBefore(`<h4> hello </h4>`, itm);
-});
 
 function Form() {
 
@@ -35,7 +27,6 @@ function Form() {
         </form>
     </div>
     ); 
-
 
 }
 export default Form;
