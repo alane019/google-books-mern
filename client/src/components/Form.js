@@ -1,12 +1,8 @@
 import React, { useState, useEffect} from "react";
-
 let userResponse = "";
 let searchResults = [];
-
 function Form() {
-
     return(
-
     <div className="form-container">
         <form>
         {/* value={userResponse} */}
@@ -27,6 +23,5 @@ function Form() {
         </form>
     </div>
     ); 
-
 }
 export default Form;
