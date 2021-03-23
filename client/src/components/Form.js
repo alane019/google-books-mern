@@ -14,11 +14,11 @@ let
              {/* value={userResponse} */}
             <input className="search-input" type="text" 
                 placeholder="Search for a book by name... ">
-            </input> <button> Hello</button>
+            </input> <button> Search</button>
         </form>
             <div className="display-results-list">
            
-           
+
              <b> "{title}" </b>
              <i>"{authors}"</i>   
              <img className="book-cover-image" src="https://loremflickr.com/320/240?lock=212" /> 
