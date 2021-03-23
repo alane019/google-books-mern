@@ -10,7 +10,18 @@ authors: [String],
  desription: String,
  image: String, 
  link: String, 
-});
+});    <script>
+
+     function dismissIt() {
+        let runFadeout = 0; 
+
+       if(document.querySelector("#fadeout") && (runFadeout > 0)) {
+         window.alert("OK";)
+     //   document.querySelector("#fadeout").style.display = "none";
+      //  document.querySelector("#fadeout").visibility = "hidden";
+       }
+     }
+    </script>
 
     const Book = mongoose.model("Book", bookSchema);
 
