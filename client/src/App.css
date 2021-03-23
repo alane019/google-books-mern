@@ -51,3 +51,22 @@ li{
 .search-input search-input{
   margin-bottom: 10px;
 }
+
+
+/* CSS  styling from this project demo (Note: I'm not using the
+actually the react-collapse package at this time. */
+.text-box{
+  margin-right: 0px; 
+  margin-bottom: 0px; 
+  margin-left: 0px; 
+  padding: 10px; 
+  border: 0px; 
+  font-variant-numeric: inherit; 
+   font-stretch: inherit; 
+   font-size: medium; 
+   line-height: inherit; 
+   font-family: 'Helvetica Neue', Helvetica, Arial, 
+   sans-serif; 
+   vertical-align: baseline; 
+   color: rgb(0, 0, 0);
+}
