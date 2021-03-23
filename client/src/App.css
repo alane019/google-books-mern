@@ -4,14 +4,17 @@
 
 .App-logo {
   animation: App-logo-spin infinite 5s linear;
-  height: 80px;
+  height: 0px;
+  left: 2%;
 }
 
+.form-container{
+  margin: 0  50px;
+}
 .App-header {
   background-color: #222;
-  background: linear-gradient(rgb(49, 53, 75), rgb(126, 126, 155),  rgb(197, 165, 94)); 
-  height: 500px;
-  padding: 20px;
+  background: none;
+  padding: 0;
   color: white;
 }
 
@@ -27,9 +30,9 @@
 
 .display-results-list{
  padding: 5px;
- max-height: 25vh;
- overflow-x: scroll;
- overflow-y: hidden;
+ max-height: 50vh;
+ overflow-x: none;
+ overflow-y: scroll;
  white-space:nowrap;
 }
 
