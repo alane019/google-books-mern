@@ -8,6 +8,9 @@ let authors = "Suzanne Collins"
 let 
 
 
+
+  
+
      Form = ()  =>  {
     return(
     <div className="form-container">
@@ -17,16 +20,9 @@ let
                 placeholder="Search for a book by name... ">
             </input> <button> Search</button>
      </form>
-        <div className="display-results-list">
-            <div class="bookbox">
-                <b> "{title}" </b>
-                <i>"{authors}"</i>   
-                <img className="book-cover-image" src="https://loremflickr.com/320/240?lock=212" /> 
-                <a  href="http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api">books link  </a>
-                <p className="text-box">  description: "Set in a dark vision of the near future, a 
-                    terrifying ... Katniss has been close to death before. For her, 
-                    survival is second nature.</p>
-            </div>
+
+
+
 
             <div class="bookbox">
                 <b> "{title}" </b>
@@ -38,34 +34,7 @@ let
                     survival is second nature.</p>
             </div>
 
-            <div class="bookbox">
-                <b> "{title}" </b>
-                <i>"{authors}"</i>   
-                <img src="https://loremflickr.com/320/240?random=3" />   
-                <a  href="http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api">books link  </a>
-                <p className="text-box">  description: "Set in a dark vision of the near future, a 
-                    terrifying ... Katniss has been close to death before. For her, 
-                    survival is second nature.</p>
-            </div>
-
-            <div class="bookbox">
-                <b> "{title}" </b>
-                <i>"{authors}"</i>   
-                <img src="https://loremflickr.com/320/240?random=2" />
-                <a  href="http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api">books link  </a>
-                <p className="text-box">  description: "Set in a dark vision of the near future, a 
-                    terrifying ... Katniss has been close to death before. For her, 
-                    survival is second nature.</p>
-            </div>
-       
-            <img src="https://loremflickr.com/320/240" />   
-            <img src="https://loremflickr.com/320/240?random=2" />   
-            <img src="https://loremflickr.com/320/240?random=3" />   
-            <img src="https://loremflickr.com/320/240" /> 
-            <img src="https://loremflickr.com/320/240" /> 
-            <img src="https://loremflickr.com/320/240" /> 
-            <img src="https://loremflickr.com/320/240?lock=212" />
-           </div>
+  
     </div>
     ); 
 }
