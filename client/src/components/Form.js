@@ -1,56 +1,39 @@
-import React, { useState, useEffect} from "react";
-let userResponse = "";
-let searchResults = [];
-
-// useState, useEffect should be used here 
-let title = "The Hunger Games"
-let authors = "Suzanne Collins"
-let 
+import React, { PureComponent } from "react";
 
 
 
-  
+// API example, Dune //////////////////////
+api.getSearchResults("dune")
+    .then( (res) => {
+        console.log("-----------------------")
+        console.log("-[E.G., Dune ]-------------")
+        console.log(res.data.items[0].volumeInfo);
+        console.log("-----------------------")
+        console.log(res.data.items[0].volumeInfo.title);
+        console.log(res.data.items[0].volumeInfo.authors);
+        console.log(res.data.items[0].volumeInfo.description);
+        console.log(res.data.items[0].volumeInfo.imageLinks.thumbnail);
+        console.log(res.data.items[0].volumeInfo.canonicalVolumeLink);
+        console.log(res.data.items[0].volumeInfo.infoLink);
+        }
+    ).catch( err => console.log(err));
+    //////////////////////////////////////
 
-     Form = ()  =>  {
-    return(
-    <div className="form-container">
-        <form>
-             {/* value={userResponse} */}
-            <input className="search-input" type="text" 
-                placeholder="Search for a book by name... ">
-            </input> <button> Search</button>
-     </form>
 
-
-
-
-            <div class="bookbox">
-                <b> "{title}" </b>
-                <i>"{authors}"</i>   
-                <img src="https://loremflickr.com/320/240?random=2" />   
-                <a  href="http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api">books link  </a>
-                <p className="text-box">  description: "Set in a dark vision of the near future, a 
-                    terrifying ... Katniss has been close to death before. For her, 
-                    survival is second nature.</p>
-            </div>
-
-  
-    </div>
+const  Form = (props)  =>  {
+    return( 
+        <div className="form-container">
+            <form>
+                <input 
+                    className="search-input" 
+                    type="text" 
+                    placeholder="Search for a book by name... "
+                    value={props.userText}
+                    onChange={props.handleTextInput}
+                />
+                <button className="btn"> Search </button>
+            </form>
+        </div>
     ); 
 }
 export default Form;
-
-
-/* Example: 
-{
- title: "The Hunger Games"
-  authors: ["Suzanne Collins"]
-  description: "Set in a dark vision of the near future, a 
-  terrifying ... Katniss has been close to death before. For her, 
-     survival is second nature."
-  image: "http://books.google.com/books/content?id=sazytgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-  link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
-
-}
-
-*/
