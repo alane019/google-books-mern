@@ -1,75 +1,193 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 5s linear;
-  height: 0px;
-  left: 2%;
-}
 
-.form-container{
-  margin: 0  50px;
-}
-.App-header {
-  background-color: #222;
-  background: none;
-  padding: 0;
-  color: white;
-}
 
-.App-intro {
-  font-size: medium;
-}
+html{
+  --lh: 1.55rem;
+  line-height: var(--lh);
+  background-color: rgba(3,3,3,.05); 
+  box-shadow: inset 115px 70px 25px 135px rgba(14, 22, 18, 0.76);
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 
-.display-results-list{
- padding: 5px;
- max-height: 50vh;
- overflow-x: none;
- overflow-y: scroll;
- white-space:nowrap;
+#main {
+  background: url(./components/assets/wu-yi-NiquC9WcVIk-unsplash.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 45vh;
+  display: sticky;
+  position: relative;
+  backdrop-filter: blur(3px) opacity(95%) !important;
+  background-color: rgba(3,3,3,.05); 
+  box-shadow: 115px 70px 25px 135px rgba(24, 39, 30, 0.404);
+  box-shadow: inset 15px 70px 55px 20px rgba(14, 22, 18, 0.822);
+  z-index: 0;
+  justify-content: center;
 }
 
-li{
-  border: rgba(122, 122, 122, 0.281) solid 4px; 
+
+.card-title {
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+
+ .details .descr {
+  font-size: 10px;
+} 
+.truncate-overflow {
+  --max-lines: 3;
+  position: relative;
+  max-height: calc((var(--lh) * var(--max-lines)));
+  overflow: hidden;
+  padding-right:  .25rem; 
+}
+
+  .truncate-overflow::before {
+    position: absolute;
+    content: "...";
+    inset-block-end: 0; /* "bottom" */
+    inset-inline-end: 0; /* "right" */
+  }
+  .truncate-overflow::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: 0; /* "right" */
+    width: 1rem;
+    height: 1rem;
+    background: rgba(255, 255, 255, 0.247);
+  }
+
+.card-item{
+  box-shadow: rgba(0, 0, 0, 0.171) .2px .2px   1px 0px ; 
+  background-color: rgba(125, 224, 125, 0.075);
+}
+
+ .card-hr {
+  color: rgba(1,1,1, 0) !important;
+ } 
+
+
+#loader {
+ width: 120px;
+ height: 220px;
+ color: rgba(125, 224, 125, 0.877);
+ box-shadow:  rgba(152, 212, 11, 0.349) 0 0 95px 48px;
+ display: inline-block;
+ margin: auto;
+} 
+
+#loader-div{
+  display: flex;
+  background-color: rgb(1,1,1,0.1);
   display: inline-block;
-  width: 200px; 
-  padding: 20px 50px
+  margin: auto;
+
+}
+
+ html{
+  background-image: url(https://media.giphy.com/media/LpDKmmMdp5rjO/giphy.gif);
+  box-shadow: 115px 170px 125px 35px rgba(11, 17, 14, 0.606);
+}
+
+body { 
+  background-image: url(https://media.giphy.com/media/LpDKmmMdp5rjO/giphy.gif);
+  padding: 20px;
+ box-shadow: 315px 370px 325px 335px rgba(11, 17, 14, 0.996), 25px 21px 15px 25px rgba(152, 212, 11, 0.541);
+ text-align: center;
+  overflow-x: hidden;
+  background-color: rgba(3,3,3,.05); 
+  box-shadow: 115px 70px 25px 135px rgba(24, 39, 30, 0.404);
+  box-shadow: inset 115px 70px 25px 135px rgba(14, 22, 18, 0.76);
 }
 
 
-.display-results-list img,
-.display-results-list div {
-  max-width: 150px;
-  margin: 5px 7px;
+*, .form-control, #page-title{
+  font-family:   Courier; 
+ font-family: ocr a; 
+  background-color: rgba(15, 20, 15, .9);
+ color: rgba(125, 224, 125, 0.877) !important; 
+ border: rgba(125, 224, 125, 0.877); 
+ box-shadow: 115px 70px 25px 135px rgba(14, 22, 18, 0.11);
+}
+
+#page-title{
+  font-size: 55px;
+  margin-bottom: 45px !important;
 }
 
 
-.search-input search-input{
-  margin-bottom: 10px;
+h1{
+  text-shadow: .25px .25px 2px rgba(186, 224, 125, 0.877) !important; 
+  box-shadow: 9px 6px 18px 11px rgb(22 14 14 / 53%) !important; 
 }
 
 
-/* CSS  styling from this project demo (Note: I'm not using the
-actually the react-collapse package at this time. */
-.text-box{
-  margin-right: 0px; 
-  margin-bottom: 0px; 
-  margin-left: 0px; 
-  padding: 10px; 
-  border: 0px; 
-  font-variant-numeric: inherit; 
-   font-stretch: inherit; 
-   font-size: medium; 
-   line-height: inherit; 
-   font-family: 'Helvetica Neue', Helvetica, Arial, 
-   sans-serif; 
-   vertical-align: baseline; 
-   color: rgb(0, 0, 0);
+#page, .w-100.h-100{
+  background-color: rgba(3,3,3,.05); 
+  box-shadow: 115px 70px 25px 135px rgba(24, 39, 30, 0.404);
+  box-shadow:  115px 70px 25px 135px rgba(14, 22, 18, 0.76);
+
+}  
+.ul, .li {
+ font-size: 15px;
+ background-color: rgba(18, 27, 24, 0.829);
 }
+
+.code{
+  text-align: left;
+  text-indent: 25%;
+  padding: 3px;
+  font-kerning: unset;
+  letter-spacing: .1rem;
+}
+
+.li{
+  padding: 7px; 
+  padding-left: 17px;
+  text-align: left;
+}
+
+ td, th, br{
+  border: solid 2px;
+  text-align: center; 
+  font-size: 20px;
+  background-color: rgba(18, 27, 24, 0.829);
+}
+
+td{
+  font-size: 70px;
+}
+
+th{
+    padding: 5px;
+    padding-top: 10px;
+}
+
+.card-item .card {
+  background-color: rgba(0, 0, 0, 0.555);
+ }
+
+ a.btn-link{
+color: rgb(0, 0, 255);
+text-shadow: rgba(4, 0, 255, 0.9) 1px 1px;
+ }
+
+ #searchBtn, .form-control{
+  background-color:rgba(15, 20, 15, 0.9)  !important;
+  width: 2rem;
+  border: white solid 1px;
+ }
+
+ #search-form {
+  width: 80%;
+  display: inline-block;
+  margin: auto;
+ }

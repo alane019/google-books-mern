@@ -5,8 +5,8 @@
   "private": true,
   "proxy": "http://localhost:3030/",
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.4.x",
+    "react-dom": "^16.4.x",
     "react-scripts": "3.4.3"
   },
   "scripts": {

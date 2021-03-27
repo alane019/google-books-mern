@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-
+import React from "react";
+import api from "../utils/API";
 
 
 // API example, Dune //////////////////////
@@ -23,7 +23,7 @@ api.getSearchResults("dune")
 const  Form = (props)  =>  {
     return( 
         <div className="form-container">
-            <form>
+            {/* <form>
                 <input 
                     className="search-input" 
                     type="text" 
@@ -33,6 +33,15 @@ const  Form = (props)  =>  {
                 />
                 <button className="btn"> Search </button>
             </form>
+            <div> 
+                <ul>
+                    {this.state.map((result, index) => (
+                    <li key={index}> 
+                        {result}
+                    </li>
+                    ))}
+                </ul>
+            </div>         */}
         </div>
     ); 
 }
