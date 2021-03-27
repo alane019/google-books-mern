@@ -106,3 +106,5 @@ dist
 #other
 .vscode
 test.md
+build
+client/build
