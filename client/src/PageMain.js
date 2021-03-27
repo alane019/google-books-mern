@@ -1,7 +1,8 @@
+import "./App.css";
 import React, { useState } from "react";
 import api from "axios";
-import "./App.css";
 import { Input, InputGroup, Button } from "reactstrap";
+
 import { RotateLoader } from "react-spinners";
 import ResultCard from "./components/ResultCard.js";
 
@@ -30,15 +31,16 @@ function PageMain() {
       });
   };
 
+  /* -------------------------------------------------------------- */
   // search form
   const SearchForm = () => {
     return (
-      <div id="main">
-        <div id="filter" className="filter"></div>
+      <div id="page" className="filter">
         <h1 id="page-title" className="text-center"> Google Books Data Explorer</h1>
         <div id="search-form">
-          <InputGroup size="lg" className="md-3">
+          <InputGroup size="lg">
             <Input
+              size="lg"
               placeholder="Seach Google Books"
               value={searchQuery}
               onChange={(evt) => setSearchQuery(evt.target.value)}
@@ -54,17 +56,13 @@ function PageMain() {
     );
   };
 
+
+  /* -------------------------------------------------------------- */
+
   const handleResultCards = () => {
-    if (loading) {
-      return (
-        <div id="loader-div">
-          <br></br>
-          <RotateLoader id="loader" />
-          <br></br>
-        </div>
-      );
-    } else {
-      const queryResultItems = resultCards.map((item, i) => {
+
+    if (!loading) {
+      const queryResultItems = resultCards.map((item, index) => {
         let thumbnail = "";
         if (item.volumeInfo.imageLinks) {
           thumbnail = item.volumeInfo.imageLinks.thumbnail;
@@ -89,11 +87,23 @@ function PageMain() {
           <div className="row">{queryResultItems}</div>
         </div>
       );
+
+    } else {
+      // Page is loading
+            return (
+              <div id="loader-div">
+                <div> Loading ... </div>
+                <RotateLoader id="loader" />
+                <div> </div>
+              </div>
+            );  
+      };
     }
-  };
+
+ 
 
   return (
-    <div className="w-100 h-100">
+    <div id="main">
       {SearchForm()}
       {handleResultCards()}
     </div>
