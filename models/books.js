@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema; 
 
-//var User = mongoose.model('book');
 
 const bookSchema = new Schema({
 title: String, 
@@ -13,9 +12,7 @@ authors: [String],
 });   
 
 
-
 const Book = mongoose.model("Book", bookSchema);
-
 module.exports = Book;
 
 /* Example: 
