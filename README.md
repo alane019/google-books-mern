@@ -2,8 +2,11 @@
 # Google Books Data Explorer
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-![img](.\assets\images\screen-main.jpg)
+![img](.\assets\images\screen-main.png)
 
+<i> Coming soon, to  Heroku. </i>
+
+<i>   </i>
 
 ## Table of Contents
 

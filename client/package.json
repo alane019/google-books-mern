@@ -1,7 +1,7 @@
 {
   "name": "google-books-mern",
-  "version": "0.1.0",
-  "description": "Search and save Google Books",
+  "version": "0.5.0",
+  "description": "Google Books Data Explorer",
   "private": true,
   "proxy": "http://localhost:3030/",
   "dependencies": {
@@ -26,5 +26,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "engines": {
+    "node": "14.15.4"
+  },
+
+  "keywords": [
+    "example",
+    "google books", 
+    "react",
+    "heroku",
+    "nodejs"
+  ]
 }
