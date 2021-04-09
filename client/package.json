@@ -30,10 +30,9 @@
   "engines": {
     "node": "14.15.4"
   },
-
   "keywords": [
     "example",
-    "google books", 
+    "google books",
     "react",
     "heroku",
     "nodejs"

@@ -31,7 +31,6 @@
     "express": "^4.16.3",
     "express-session": "^1.17.1",
     "express-validator": "^6.10.0",
-    "fix": "0.0.6",
     "font-awesome": "^4.7.0",
     "fontawesome": "^5.6.3",
     "if-env": "^1.0.4",
@@ -49,7 +48,7 @@
     "react-animated-css": "^1.2.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^3.4.3",
     "react-spinners": "^0.10.6",
     "reactstrap": "^8.9.0",
     "then": "0.0.1"
