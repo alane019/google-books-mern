@@ -2,11 +2,10 @@
 # Google Books Data Explorer
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
+Try it on Heroku →  <https://mysql-burger-express.herokuapp.com/>
+
 ![img](./assets/images/screen-main.png)
 
-<i> Coming soon, to  Heroku. </i>
-
-<i>   </i>
 
 ## Table of Contents
 
