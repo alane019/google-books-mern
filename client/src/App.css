@@ -88,11 +88,9 @@ body {
  } 
 
 
+
 #loader {
- width: 120px;
- height: 220px;
- color: rgba(125, 224, 125, 0.877);
- box-shadow:  rgba(152, 212, 11, 0.349) 0 0 95px 48px !important;
+
  display: inline-block;
  margin: auto;
 } 
@@ -127,7 +125,7 @@ body {
  font-family: ocr a; 
   background-color: rgba(15, 20, 15, .9);
  color: rgba(125, 224, 125, 0.877) !important; 
- border: rgba(125, 224, 125, 0.877); 
+ border: #7de07de0; 
  box-shadow: 115px 70px 219px 125px rgba(14, 22, 18, 0.11);
 }
 

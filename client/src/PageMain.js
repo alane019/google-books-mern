@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import api from "axios";
 import { Input, InputGroup, Button } from "reactstrap";
 
-import { RotateLoader } from "react-spinners";
+import { RotateLoader, BounceLoader } from "react-spinners";
 import ResultCard from "./components/ResultCard.js";
 
 let maxResults = 25;
@@ -16,6 +16,8 @@ function PageMain() {
 
   // api handler
   const handleFormSubmit = () => {
+      //BounceLoader
+    if(searchQuery && (searchQuery.trim().length != 0)){
     setLoading(true);
     api
       .get(
@@ -29,7 +31,23 @@ function PageMain() {
         setLoading(true);
         console.log(err.response);
       });
+    }
   };
+
+  /*
+  const bookSchema = new Schema({
+title: String, 
+authors: [String],
+ desription: String,
+ image: String, 
+ link: String, 
+  */
+
+
+
+
+
+
 
   /* -------------------------------------------------------------- */
   // search form
@@ -93,7 +111,7 @@ function PageMain() {
             return (
               <div id="loader-div">
                 <div> Loading ... </div>
-                <RotateLoader id="loader" />
+                <RotateLoader id="loader" color="#65c93d70" size="55" />
                 <div> </div>
               </div>
             );  
