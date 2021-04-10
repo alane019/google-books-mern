@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import api from "axios";
-import { Input, InputGroup, Button } from "reactstrap";
+import { Input, InputGroup, Button, Card } from "reactstrap";
 
 import { RotateLoader, BounceLoader } from "react-spinners";
 import ResultCard from "./components/ResultCard.js";
@@ -46,9 +46,6 @@ authors: [String],
 
 
 
-
-
-
   /* -------------------------------------------------------------- */
   // search form
   const SearchForm = () => {
@@ -77,15 +74,20 @@ authors: [String],
 
   /* -------------------------------------------------------------- */
 
+
   const handleResultCards = () => {
 
+
+
     if (!loading) {
-      const queryResultItems = resultCards.map((item, index) => {
+      const queryResultItems = resultCards.map(
+        (item, index) => {
         let thumbnail = "";
         if (item.volumeInfo.imageLinks) {
           thumbnail = item.volumeInfo.imageLinks.thumbnail;
         }
 
+    
         return (
           <div className="col-lg-4 mb-3" key={item.id}>
             <ResultCard
@@ -95,10 +97,14 @@ authors: [String],
               authors={item.volumeInfo.authors}
               previewLink={item.volumeInfo.previewLink}
               infoLink={item.volumeInfo.infoLink}
-            />
+            >
+            </ResultCard>        
           </div>
         );
-      });
+       }
+      );
+
+  
 
       return (
         <div className="container">
@@ -111,14 +117,13 @@ authors: [String],
             return (
               <div id="loader-div">
                 <div> Loading ... </div>
-                <RotateLoader id="loader" color="#65c93d70" size="55" />
+                <RotateLoader id="loader" color="#65c93d70" size="55px" />
                 <div> </div>
               </div>
             );  
       };
     }
 
- 
 
   return (
     <div id="main">

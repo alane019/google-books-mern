@@ -1,7 +1,10 @@
 import React from 'react';
-import { Card, CardTitle, CardImg, CardBody} from 'reactstrap';
+import { Card, CardTitle, CardImg, CardBody, Button} from 'reactstrap';
 
 const ResultCard = ({ thumbnail, title, description, authors, previewLink }) => {
+
+  const handleClick = () => {console.log("CLICKED.")};
+
 
   return (                            
     <Card style={{ maxHeight: "350", maxWidth: "300px" }} className="flex-parent card-item">
@@ -20,6 +23,7 @@ const ResultCard = ({ thumbnail, title, description, authors, previewLink }) => 
         </div>  
           <br></br>
         <div className="details"> <i> Authors: {authors} </i> </div>
+        <Button onClick={handleClick} color="success"> Save book </Button> {' '}
       </CardBody>
     </Card>
   );
