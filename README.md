@@ -20,7 +20,7 @@ Try it on Heroku →  <https://search-google-books-mern.herokuapp.com/>
 ---
 ##  Overview <a name = "overview"></a>
 
-Overview description. 
+Uses Axios API client and Google Books API endpoint to display a stylized list of book results from the official Google Books database, based on user search query. 
 
 ----
 ##  Getting Started <a name = "getting_started"></a>
