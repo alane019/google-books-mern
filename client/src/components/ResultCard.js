@@ -1,10 +1,17 @@
 import React from 'react';
 import { Card, CardTitle, CardImg, CardBody, Button} from 'reactstrap';
+import api from "../utils/API.js";
 
 const ResultCard = ({ thumbnail, title, description, authors, previewLink }) => {
 
-  const handleClick = () => {console.log("CLICKED.")};
+  let book = { thumbnail, title, description, authors, previewLink };
 
+  const handleClick = () => {
+    console.log(book);
+      api.addBook(book)
+        // .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
+        // .catch(err => console.error(err));
+  }
 
   return (                            
     <Card style={{ maxHeight: "350", maxWidth: "300px" }} className="flex-parent card-item">
@@ -23,11 +30,11 @@ const ResultCard = ({ thumbnail, title, description, authors, previewLink }) => 
         </div>  
           <br></br>
         <div className="details"> <i> Authors: {authors} </i> </div>
-        <Button onClick={handleClick} color="success"> Save book </Button> {' '}
+        <Button  onClick={handleClick} color="success"> Save book </Button> {' '}
       </CardBody>
     </Card>
   );
-  
 };
+
 
 export default ResultCard;

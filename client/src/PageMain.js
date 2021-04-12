@@ -17,7 +17,7 @@ function PageMain() {
   // api handler
   const handleFormSubmit = () => {
       //BounceLoader
-    if(searchQuery && (searchQuery.trim().length != 0)){
+    if(searchQuery && (searchQuery.trim().length !== 0)){
     setLoading(true);
     api
       .get(
