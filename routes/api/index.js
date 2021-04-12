@@ -1,21 +1,11 @@
-const express = require("express");
-const bb = require("../models/books");
+const router = require("express").Router();
 
-const router = express.router(); 
+const bookRoute = require("./books");
 
-router.get("/api/books", (req, res) => {
-    bb.find({})
-    .then( (books) => res.json(books))
-    .catch(err => res.status(400).json(err));
+//routes:  Books
+router.use("/books/saved", bookRoute);
 
-});
-
-
-bb.post("/api/books", (req, res ) =>  {
-    bb.create(req.body)
-      .then((newBook) => res.json(newBook))
-      .catch(err => res.status(500).json(err));
-});
+module.exports = router; 
 
 /* Example: 
 {
@@ -27,5 +17,4 @@ bb.post("/api/books", (req, res ) =>  {
   link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
   title: "The Hunger Games"
 }
-
 */
