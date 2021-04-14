@@ -19,34 +19,12 @@ body {
 
 
 
-/* #main {
-
-  background-repeat: no-repeat;
-  background-position: center;
-  size: cover;
-  width: 100vh;
-   height: 80vh; 
-  background-color: rgba(3,3,3,.75); 
-  box-shadow: 115px 70px 25px 135px rgba(24, 39, 30, 0.404);
-  box-shadow: inset 15px 70px 55px 20px rgba(14, 22, 18, 0.822);
-  z-index: 1;
-  justify-content: center;
-}   */
-
-/* #main  {
-  background: url(./components/assets/wu-yi-NiquC9WcVIk-unsplash.png);
-  opacity: 98%;
-
-} */
-
-
-
-.card-title {
+.card-body {
   overflow: hidden;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
   font-size: 16px;
-  white-space: nowrap;
+  white-space: normal;
   text-overflow: ellipsis;
 }
 
@@ -55,17 +33,20 @@ body {
  .details .descr {
   font-size: 10px;
 } 
+
+
 .truncate-overflow {
   --max-lines: 3;
   position: relative;
   max-height: calc((var(--lh) * var(--max-lines)));
   overflow: hidden;
-  padding-right:  .25rem; 
+  padding-right:  .01rem; 
+  border: none;
 }
 
   .truncate-overflow::before {
     position: absolute;
-    content: "...";
+    content: "…";
     inset-block-end: 0; /* "bottom" */
     inset-inline-end: 0; /* "right" */
   }
@@ -84,7 +65,7 @@ body {
 }
 
  .card-hr {
-  color: rgba(1,1,1, 0) !important;
+  color: rgba(102, 95, 95, 0.295) !important;
  } 
 
 
@@ -154,6 +135,10 @@ h1{
   background-color: rgba(0, 0, 0, 0.555);
  }
 
+ .card-body{
+   padding: 15px !important;
+ }
+
  a.btn-link{
 color: rgb(0, 0, 255);
 text-shadow: rgba(4, 0, 255, 0.9) 1px 1px;
@@ -178,6 +163,14 @@ text-shadow: rgba(4, 0, 255, 0.9) 1px 1px;
 
  }
 
+ hr {
+   color: rgba(173, 164, 122, 0.486) !important;
+ }
+
+ .btn .btn-success {
+  margin-top: 11px;
+
+ }
 
 
 
