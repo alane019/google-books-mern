@@ -81,12 +81,26 @@ authors: [String],
 
     if (!loading) {
       const queryResultItems = resultCards.map(
-        (item, index) => {
-        let thumbnail = "";
+        (item, id) => {
+        let thumbnail = "./books-missing-thumb.png";
         if (item.volumeInfo.imageLinks) {
           thumbnail = item.volumeInfo.imageLinks.thumbnail;
         }
 
+        let pdf = "Not available";
+        if (item.accessInfo.pdf.isAvailable) { 
+          pdf = item.accessInfo.pdf.downloadLink
+        }
+     
+     
+
+        console.log(thumbnail);
+
+        console.log(" \n \n ~~~~~~~~~~~~~~~~~")
+        console.log(item)
+        console.log("~~~~~~~~~~~~~~~~~ \n \n")
+   
+ 
     
         return (
           <div className="col-lg-4 mb-3" key={item.id}>
@@ -97,6 +111,10 @@ authors: [String],
               authors={item.volumeInfo.authors}
               previewLink={item.volumeInfo.previewLink}
               infoLink={item.volumeInfo.infoLink}
+              googleId = {item.id}
+              pdf={pdf}
+              webReaderLink={item.webReaderLink}
+              pdfIsAvailable={item.accessInfo.pdf.isAvailable}
             >
             </ResultCard>        
           </div>
