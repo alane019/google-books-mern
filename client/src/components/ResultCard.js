@@ -1,10 +1,13 @@
+import { PictureAsPdf } from '@material-ui/icons';
 import React from 'react';
 import { Card, CardTitle, CardImg, CardBody, Button} from 'reactstrap';
 import api from "../utils/API.js";
 
-const ResultCard = ({ thumbnail, title, description, authors, previewLink }) => {
+const ResultCard = ({ thumbnail, title, description, authors,
+   previewLink, googleId, pdf, webReaderLink, pdfIsAvailable }) => {
 
-  let book = { thumbnail, title, description, authors, previewLink };
+  let book = {  thumbnail, title, description, authors,
+    previewLink, googleId, pdf, webReaderLink, pdfIsAvailable  };
 
   const handleClick = () => {
     console.log(book);
@@ -22,15 +25,26 @@ const ResultCard = ({ thumbnail, title, description, authors, previewLink }) => 
           <div className="details descr truncate-overflow">  
             {description}
           </div>
-          <div className="details"> 
-          <a href={previewLink} className="btn-link" 
-            color="default" type="button" target="_blank"
-            rel="noopener noreferrer" > See full details on Google Books 
-          </a>
-        </div>  
+
+          <div className="details info-link"> 
+              <a href={previewLink} className="btn-link" 
+                color="default" type="button" target="_blank"
+                rel="noopener noreferrer" > View on Google Books 
+              </a>
+          </div>  
+  
+           <div className="details pdf"> 
+           {pdfIsAvailable
+               ?   <a href={pdf} className="btn-link" 
+               color="default" type="button" target="_blank"
+               rel="noopener noreferrer" > PDF Available</a> 
+               : <div> </div>
+           }   
+          </div>  
+
           <br></br>
         <div className="details"> <i> Authors: {authors} </i> </div>
-        <Button  onClick={handleClick} color="success"> Save book </Button> {' '}
+        {/* <Button  onClick={handleClick} color="success"> Save book </Button> {' '} */}
       </CardBody>
     </Card>
   );
@@ -38,3 +52,14 @@ const ResultCard = ({ thumbnail, title, description, authors, previewLink }) => 
 
 
 export default ResultCard;
+
+
+// thumbnail={thumbnail}
+// title={item.volumeInfo.title}
+// description={item.volumeInfo.description}
+// authors={item.volumeInfo.authors}
+// previewLink={item.volumeInfo.previewLink}
+// infoLink={item.volumeInfo.infoLink}
+// googleId = {item.id}
+// pdf={pdf}
+// webReaderLink={item.webReaderLink}

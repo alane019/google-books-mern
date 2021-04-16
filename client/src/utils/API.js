@@ -7,20 +7,23 @@ export default {
     },
 
     addBook: function(book) {
-        console.log(` [ axios API.js addbook function ran. Book value:  `)
-        console.log(book.authors);
-        console.log(" ]");
+        return axios.post("api/books/saved/" + book);
 
-        axios.post("/api/books",  {
-            image: book.thumbnail, 
-            title: book.title, 
-            description: book.description, 
-            authors: book.authors, 
-            link: book.previewLink 
-          })
-          .then(function (response) {
-            console.log(response);
-          });
+
+        // console.log(` [ axios API.js addbook function ran. Book value:  `)
+        // console.log(book.authors);
+        // console.log(" ]");
+
+        // axios.post("/api/books",  {
+        //     image: book.thumbnail, 
+        //     title: book.title, 
+        //     description: book.description, 
+        //     authors: book.authors, 
+        //     link: book.previewLink 
+        //   })
+        //   .then(function (response) {
+        //     console.log(response);
+        //   });
     }
 
 

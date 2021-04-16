@@ -9,9 +9,10 @@ authors: [String],
  desription: String,
  image: String, 
  link: String, 
- categories: [String],
  date: { type: Date, default: Date.now },
- googleId: String, 
+ googleId: String,
+ pdf: String,
+ webReaderLink: String, 
 });   
 
 

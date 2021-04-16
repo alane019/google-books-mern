@@ -1,12 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes")
-var cors = require("cors")
+//var cors = require("cors")
 const app = express();
 
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+//app.use(cors());
 
 
 // Define middleware here
