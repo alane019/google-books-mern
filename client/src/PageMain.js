@@ -1,9 +1,9 @@
 import "./App.css";
 import React, { useState } from "react";
 import api from "axios";
-import { Input, InputGroup, Button, Card } from "reactstrap";
+import { Input, InputGroup, Button } from "reactstrap";
 
-import { RotateLoader, BounceLoader } from "react-spinners";
+import { RotateLoader } from "react-spinners";
 import ResultCard from "./components/ResultCard.js";
 
 let maxResults = 25;
@@ -16,7 +16,7 @@ function PageMain() {
 
   // api handler
   const handleFormSubmit = () => {
-      //BounceLoader
+
     if(searchQuery && (searchQuery.trim().length !== 0)){
     setLoading(true);
     api
@@ -77,8 +77,6 @@ authors: [String],
 
   const handleResultCards = () => {
 
-
-
     if (!loading) {
       const queryResultItems = resultCards.map(
         (item, id) => {
@@ -93,15 +91,13 @@ authors: [String],
         }
      
      
-
         console.log(thumbnail);
 
         console.log(" \n \n ~~~~~~~~~~~~~~~~~")
         console.log(item)
         console.log("~~~~~~~~~~~~~~~~~ \n \n")
    
- 
-    
+
         return (
           <div className="col-lg-4 mb-3" key={item.id}>
             <ResultCard
