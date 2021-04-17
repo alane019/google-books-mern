@@ -1,4 +1,3 @@
-import { PictureAsPdf } from '@material-ui/icons';
 import React from 'react';
 import { Card, CardTitle, CardImg, CardBody, Button} from 'reactstrap';
 import api from "../utils/API.js";
@@ -9,11 +8,17 @@ const ResultCard = ({ thumbnail, title, description, authors,
   let book = {  thumbnail, title, description, authors,
     previewLink, googleId, pdf, webReaderLink, pdfIsAvailable  };
 
+
+    console.log("book props, resultCard.js");
+    console.log(book);
+    console.log({book});
+
+
   const handleClick = () => {
     console.log(book);
       api.addBook(book)
-        // .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
-        // .catch(err => console.error(err));
+       .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
+       .catch(err => console.error(err));
   }
 
   return (                            
