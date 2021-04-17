@@ -49,7 +49,7 @@ const ResultCard = ({ thumbnail, title, description, authors,
 
           <br></br>
         <div className="details"> <i> Authors: {authors} </i> </div>
-        {/* <Button  onClick={handleClick} color="success"> Save book </Button> {' '} */}
+         <Button  onClick={handleClick} color="success"> Save book </Button> {' '} 
       </CardBody>
     </Card>
   );

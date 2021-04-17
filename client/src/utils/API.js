@@ -7,10 +7,12 @@ export default {
     },
 
     addBook: function(book) {
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+         console.log(" console logging value of book argument in addBook function,  in client side API.js ")
         console.log(book);
         console.log({book});
-        return axios.post("api/books/saved/" + book);
-
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        return axios.post("api/books/", book);
 
         // console.log(` [ axios API.js addbook function ran. Book value:  `)
         // console.log(book.authors);
