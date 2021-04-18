@@ -1,14 +1,18 @@
-import "./App.css";
+import "../App.css";
 import React, { useState } from "react";
 import api from "axios";
 import { Input, InputGroup, Button } from "reactstrap";
 
 import { RotateLoader } from "react-spinners";
-import ResultCard from "./components/ResultCard.js";
+import ResultCard from "../components/SearchResult.js";
+
+
+ //This page is used to search Google Books Internet database
 
 let maxResults = 25;
+
 // Main app loop ///
-function PageMain() {
+function Saved() {
   // set initial state values
   const [searchQuery, setSearchQuery] = useState("");
   const [resultCards, setResultCards] = useState([]);
@@ -42,8 +46,6 @@ authors: [String],
  image: String, 
  link: String, 
   */
-
-
 
 
   /* -------------------------------------------------------------- */
@@ -147,4 +149,4 @@ authors: [String],
   );
 }
 
-export default PageMain;
+export default Saved;
