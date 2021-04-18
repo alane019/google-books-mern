@@ -2,10 +2,7 @@ import axios from "axios";
 
 export default {
 
-    getSearchResults: function(query) {
-        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
-    },
-
+    // API calls for data stored in this application's database
     addBook: function(book) {
         console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
          console.log(" console logging value of book argument in addBook function,  in client side API.js ")
@@ -14,21 +11,18 @@ export default {
         console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         return axios.post("api/books/", book);
 
-        // console.log(` [ axios API.js addbook function ran. Book value:  `)
-        // console.log(book.authors);
-        // console.log(" ]");
+    },
 
-        // axios.post("/api/books",  {
-        //     image: book.thumbnail, 
-        //     title: book.title, 
-        //     description: book.description, 
-        //     authors: book.authors, 
-        //     link: book.previewLink 
-        //   })
-        //   .then(function (response) {
-        //     console.log(response);
-        //   });
+    getSavedBooks: function() {
+        return axios.get("api/books/");
+    },
+
+    searchSavedByTitle: function(query) {
+        return axios.get("api/books/search/title");
+    },
+
+    removeById: function(bookId){
+        axios.delete("/api/books/book/" + bookId)
     }
-
 
 };
