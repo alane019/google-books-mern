@@ -84,14 +84,15 @@ authors: [String],
         <div id="search-form">
           <InputGroup size="lg">
             <Input
+               style={{opacity: ".001"}}
               size="lg"
               placeholder="Seach Saved Books"
               value={searchQuery}
               onChange={(evt) => setSearchQuery(evt.target.value)}
             />
-
-            <Button id="searchBtn" color="secondary" onClick={handleFormSubmit}>
-              <i className="fas fa-search"></i>
+            {/* <Button id="searchBtn" color="secondary" onClick={() => {console.log("#searchBtn clicked")}}> */}
+            <Button id="searchBtn" style={{opacity: ".001"}} color="secondary" onClick={() => {console.log("#searchBtn clicked")}}>
+              <i className="fas fa-search"> </i>
             </Button>
           </InputGroup>
           <div className="d-flex text-white justify-content-center"></div>

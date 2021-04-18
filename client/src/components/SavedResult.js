@@ -15,8 +15,9 @@ const ResultCard = ({ thumbnail, title, description, authors,
     console.log({book});
 
   const handleClick = () => {
-    console.log(book);
-      api.addBook(book)
+    console.log("book.id in handClick function: ");
+    console.log(book.id);
+      api.removeById(book._id)
        .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
        .catch(err => console.error(err));
   }
@@ -49,7 +50,7 @@ const ResultCard = ({ thumbnail, title, description, authors,
 
           <br></br>
         <div className="details"> <i> Authors: {authors} </i> </div>
-         <Button  onClick={handleClick} color="success"> Save book </Button> {' '} 
+        {/* <Button  onClick={handleClick} color="success"> Delete </Button> {' '}   */}
       </CardBody>
     </Card>
   );
@@ -58,13 +59,3 @@ const ResultCard = ({ thumbnail, title, description, authors,
 
 export default ResultCard;
 
-
-// thumbnail={thumbnail}
-// title={item.volumeInfo.title}
-// description={item.volumeInfo.description}
-// authors={item.volumeInfo.authors}
-// previewLink={item.volumeInfo.previewLink}
-// infoLink={item.volumeInfo.infoLink}
-// googleId = {item.id}
-// pdf={pdf}
-// webReaderLink={item.webReaderLink}
