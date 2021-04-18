@@ -113,6 +113,7 @@ body {
 #page-title{
   font-size: 55px;
   margin-bottom: 45px !important;
+  margin-top: 20px;
 }
 
 
@@ -155,8 +156,9 @@ text-shadow: rgba(4, 0, 255, 0.9) 1px 1px;
   width: 80%;
   display: inline-block;
   margin: auto;
+  margin-top: 12px;
   margin-bottom: 15px;
-  border: rgba(182, 230, 53, 0.432) solid 1px;
+  border: rgba(184, 207, 126, 0.432) solid 1px;
   padding: 2px;
   border-radius: 3px;
   box-shadow: 115px 759px 599px 75px rgba(14, 22, 18, 0.11);
@@ -170,6 +172,11 @@ text-shadow: rgba(4, 0, 255, 0.9) 1px 1px;
  .btn .btn-success {
   margin-top: 11px;
 
+ }
+
+ .nav-tabs{
+  border-bottom: rgba(137, 156, 129, 0.418) solid 2px !important;
+  padding-bottom: 5px;
  }
 
 
