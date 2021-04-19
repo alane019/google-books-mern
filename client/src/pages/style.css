@@ -1,0 +1,24 @@
+
+ 
+ .buttons-con .action-link-wrap {
+   margin-top: 40px;
+   /* This wraps behind the main page button */
+   /* border: rgb(156, 152, 152) solid 3px; */
+
+ }
+ 
+ .buttons-con .action-link-wrap a {
+   background: #081808bd;
+   /* box-shadow: 5px 670px 225px 385px rgba(108, 133, 41, 0.192); */
+   padding: 8px 25px;
+   border-radius: 4px;
+   color: red(114, 185, 96, 0.616) !important;
+   font-weight: bold;
+   font-size: 14px;
+   transition: all 0.3s linear;
+   cursor: pointer;
+   text-decoration: none;
+   margin-right: 10px;
+   border: rgba(114, 185, 96, 0.616) solid 3px;
+
+ }

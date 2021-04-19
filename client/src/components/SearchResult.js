@@ -2,10 +2,10 @@ import React from 'react';
 import { Card, CardTitle, CardImg, CardBody, Button} from 'reactstrap';
 import api from "../utils/API.js";
 
-const ResultCard = ({ thumbnail, title, description, authors,
+const ResultCard = ({ image, title, description, authors,
    previewLink, googleId, pdf, webReaderLink, pdfIsAvailable }) => {
 
-  let book = {  thumbnail, title, description, authors,
+  let book = {  image, title, description, authors,
     previewLink, googleId, pdf, webReaderLink, pdfIsAvailable  };
 
 
@@ -24,21 +24,21 @@ const ResultCard = ({ thumbnail, title, description, authors,
   return (                            
     <Card style={{ maxHeight: "350", maxWidth: "300px" }} className="flex-parent card-item">
       <CardImg top style={{  margin: "5px", marginLeft: "75px", marginRight: "75px", width: "150px", maxHeight: "200px"}}
-       src={thumbnail} alt={title} />
+       src={image} alt={title} />
       <CardBody>
         <CardTitle className="card-title">{title}</CardTitle>
           <div className="details descr truncate-overflow">  
             {description}
           </div>
 
-          <div className="details info-link"> 
+          <div className="details info-link buttons-con action-link-wrap"> 
               <a href={previewLink} className="btn-link" 
                 color="default" type="button" target="_blank"
                 rel="noopener noreferrer" > View on Google Books 
               </a>
           </div>  
   
-           <div className="details pdf"> 
+           <div className="details pdf buttons-con action-link-wrap"> 
            {pdfIsAvailable
                ?   <a href={pdf} className="btn-link" 
                color="default" type="button" target="_blank"

@@ -82,18 +82,33 @@ authors: [String],
     if (!loading) {
       const queryResultItems = resultCards.map(
         (item, id) => {
-        let thumbnail = "./books-missing-thumb.png";
+          //if thumbnail image is included, replace the default 'missing thumbnail' image url,
+        let image = "./books-missing-thumb.png";
         if (item.volumeInfo.imageLinks) {
-          thumbnail = item.volumeInfo.imageLinks.thumbnail;
+          image = item.volumeInfo.imageLinks.thumbnail;
         }
 
-        let pdf = "Not available";
+        let previewLinkText = ""; 
+        let previewLink = "";
+        if (item.volumeInfo.previewLink) { 
+          previewLink = item.accessInfo.pdf.downloadLink;
+          previewLinkText = ` View on Google Books `
+        }
+
+
+        let pdf = "";
         if (item.accessInfo.pdf.isAvailable) { 
-          pdf = item.accessInfo.pdf.downloadLink
+          pdf = item.accessInfo.pdf.downloadLink;
+        }
+
+        let webReaderLink = "";
+        if (item.webReaderLink) { 
+          webReaderLink = item.webReaderLink;
         }
      
      
-        console.log(thumbnail);
+     
+        console.log(image);
 
         console.log(" \n \n ~~~~~~~~~~~~~~~~~")
         console.log(item)
@@ -103,15 +118,15 @@ authors: [String],
         return (
           <div className="col-lg-4 mb-3" key={item.id}>
             <ResultCard
-              thumbnail={thumbnail}
+              image={image}
               title={item.volumeInfo.title}
               description={item.volumeInfo.description}
               authors={item.volumeInfo.authors}
               previewLink={item.volumeInfo.previewLink}
               infoLink={item.volumeInfo.infoLink}
               googleId = {item.id}
-              pdf={pdf}
               webReaderLink={item.webReaderLink}
+              pdf={pdf}
               pdfIsAvailable={item.accessInfo.pdf.isAvailable}
             >
             </ResultCard>        
