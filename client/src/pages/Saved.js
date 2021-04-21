@@ -36,15 +36,6 @@ function SavedBookPage() {
     }
   };
 
-  /*
-  const bookSchema = new Schema({
-title: String, 
-authors: [String],
- desription: String,
- image: String, 
- link: String, 
-  */
-
   /* -------------------------------------------------------------- */
   // useEffect ---->
   //getSavedBooks
@@ -133,17 +124,6 @@ authors: [String],
         else{
           arrayItem.webReaderLink = "Not available";
         }
-
-        // data check
-        console.log(" \n \n ~~~ note:  data check ~~");
-        console.log(" \n \n ~~~~~~~~~~~~~~~~~");
-        console.log(arrayItem);
-        console.log("~~~~~~~~~~~~~~~~~ \n \n");
-
-        console.log("Check value of image variable then arrayItems.image value for saved ")
-        console.log(" result card, on saved book page, handleResultCards() function: ");
-        console.log(image);
-        console.log(arrayItem.image);
 
         return (
           <div className="col-lg-4 mb-3" key={arrayItem.id}>

@@ -3,7 +3,7 @@ import { Card, CardTitle, CardImg, CardBody, Button} from 'reactstrap';
 import api from "../utils/API.js";
 
 const ResultCard = ({ image, title, description, authors,
-   previewLink, googleId, pdf, webReaderLink, pdfIsAvailable }) => {
+   previewLink, googleId, pdf, webReaderLink, pdfIsAvailable, previewLinkText }) => {
 
   let book = {  image, title, description, authors,
    previewLink, googleId, pdf, webReaderLink, pdfIsAvailable  };
@@ -29,7 +29,7 @@ const ResultCard = ({ image, title, description, authors,
           <div className="details info-link buttons-con action-link-wrap"> 
               <a href={previewLink} className="btn-link" 
                 color="default" type="button" target="_blank"
-                rel="noopener noreferrer" > View on Google Books 
+                rel="noopener noreferrer" > {previewLinkText}
               </a>
           </div>  
   
@@ -42,12 +42,8 @@ const ResultCard = ({ image, title, description, authors,
            }   
           </div>  
           <br></br>
-
         <div className="details"> 
-            {Array.isArray(authors)
-                  ?   <a> Authors:  ({authors}) </a> 
-                  : <div> <a> Authors: Not available </a>  </div>
-              }  
+                   <div> <a> Authors: {authors} </a>  </div>
         </div>
               <Button  onClick={handleClick} color="success"> Save book </Button> {' '} 
       </CardBody>

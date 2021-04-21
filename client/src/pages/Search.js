@@ -6,7 +6,6 @@ import { Input, InputGroup, Button } from "reactstrap";
 import { RotateLoader } from "react-spinners";
 import ResultCard from "../components/SearchResult.js";
 
-
  //This page is used to search Google Books Internet database
 
 let maxResults = 20;
@@ -38,16 +37,6 @@ function Saved() {
     }
   };
 
-  /*
-  const bookSchema = new Schema({
-title: String, 
-authors: [String],
- desription: String,
- image: String, 
- link: String, 
-  */
-
-
   /* -------------------------------------------------------------- */
   // search form
   const SearchForm = () => {
@@ -73,9 +62,7 @@ authors: [String],
     );
   };
 
-
   /* -------------------------------------------------------------- */
-
 
   const handleResultCards = () => {
 
@@ -95,7 +82,6 @@ authors: [String],
           previewLinkText = ` View on Google Books `
         }
 
-
         let pdf = "";
         if (item.accessInfo.pdf.isAvailable) { 
           pdf = item.accessInfo.pdf.downloadLink;
@@ -106,26 +92,27 @@ authors: [String],
           webReaderLink = item.webReaderLink;
         }
      
-     
-     
-        console.log(image);
+        let authors = "";
+        let arrJoin = (arr) => {
+        if(arr){
+            return arr.join(", ")
+          }   
+        }
 
-        console.log(" \n \n ~~~~~~~~~~~~~~~~~")
-        console.log(item)
-        console.log("~~~~~~~~~~~~~~~~~ \n \n")
+        authors = arrJoin(item.volumeInfo.authors);
    
-
         return (
           <div className="col-lg-4 mb-3" key={item.id}>
             <ResultCard
               image={image}
               title={item.volumeInfo.title}
               description={item.volumeInfo.description}
-              authors={item.volumeInfo.authors}
+              authors={authors}
               previewLink={item.volumeInfo.previewLink}
+              previewLinkText={previewLinkText}
               infoLink={item.volumeInfo.infoLink}
               googleId = {item.id}
-              webReaderLink={item.webReaderLink}
+              webReaderLink={webReaderLink}
               pdf={pdf}
               pdfIsAvailable={item.accessInfo.pdf.isAvailable}
             >
@@ -134,8 +121,6 @@ authors: [String],
         );
        }
       );
-
-  
 
       return (
         <div className="container">
