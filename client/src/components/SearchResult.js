@@ -6,13 +6,9 @@ const ResultCard = ({ image, title, description, authors,
    previewLink, googleId, pdf, webReaderLink, pdfIsAvailable }) => {
 
   let book = {  image, title, description, authors,
-    previewLink, googleId, pdf, webReaderLink, pdfIsAvailable  };
+   previewLink, googleId, pdf, webReaderLink, pdfIsAvailable  };
 
-
-    console.log("book props, resultCard.js");
-    console.log(book);
     console.log({book});
-
 
   const handleClick = () => {
     console.log(book);
@@ -21,7 +17,7 @@ const ResultCard = ({ image, title, description, authors,
        .catch(err => console.error(err));
   }
 
-  return (                            
+  return (                     
     <Card style={{ maxHeight: "350", maxWidth: "300px" }} className="flex-parent card-item">
       <CardImg top style={{  margin: "5px", marginLeft: "75px", marginRight: "75px", width: "150px", maxHeight: "200px"}}
        src={image} alt={title} />
@@ -30,7 +26,6 @@ const ResultCard = ({ image, title, description, authors,
           <div className="details descr truncate-overflow">  
             {description}
           </div>
-
           <div className="details info-link buttons-con action-link-wrap"> 
               <a href={previewLink} className="btn-link" 
                 color="default" type="button" target="_blank"
@@ -46,18 +41,21 @@ const ResultCard = ({ image, title, description, authors,
                : <div> </div>
            }   
           </div>  
-
           <br></br>
-        <div className="details"> <i> Authors: {authors} </i> </div>
-         <Button  onClick={handleClick} color="success"> Save book </Button> {' '} 
+
+        <div className="details"> 
+            {Array.isArray(authors)
+                  ?   <a> Authors:  ({authors}) </a> 
+                  : <div> <a> Authors: Not available </a>  </div>
+              }  
+        </div>
+              <Button  onClick={handleClick} color="success"> Save book </Button> {' '} 
       </CardBody>
     </Card>
   );
 };
 
-
 export default ResultCard;
-
 
 // thumbnail={thumbnail}
 // title={item.volumeInfo.title}

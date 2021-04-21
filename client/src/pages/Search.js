@@ -9,7 +9,7 @@ import ResultCard from "../components/SearchResult.js";
 
  //This page is used to search Google Books Internet database
 
-let maxResults = 25;
+let maxResults = 20;
 
 // Main app loop ///
 function Saved() {
