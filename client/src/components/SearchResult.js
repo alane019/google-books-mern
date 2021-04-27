@@ -1,5 +1,7 @@
-import React from 'react';
-import { Card, CardTitle, CardImg, CardBody, Button} from 'reactstrap';
+
+import React, { useState } from 'react';
+import { Button, Toast, ToastBody, ToastHeader } from 'reactstrap';
+import { Card, CardTitle, CardImg, CardBody} from 'reactstrap';
 import api from "../utils/API.js";
 
 const ResultCard = ({ image, title, description, authors,
@@ -8,9 +10,15 @@ const ResultCard = ({ image, title, description, authors,
   let book = {  image, title, description, authors,
    previewLink, googleId, pdf, webReaderLink, pdfIsAvailable  };
 
+   const [show, setShow] = useState(false);
+   const toggle = () => setShow(!show);
+
     console.log({book});
 
   const handleClick = () => {
+    toggle();
+
+
     console.log(book);
       api.addBook(book)
        .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
@@ -45,7 +53,13 @@ const ResultCard = ({ image, title, description, authors,
         <div className="details"> 
                    <div> <a> Authors: {authors} </a>  </div>
         </div>
-              <Button  onClick={handleClick} color="success"> Save book </Button> {' '} 
+              <div>
+                <Button  onClick={handleClick} color="primary"> Save book </Button> 
+                <Toast isOpen={show}>
+                  <ToastHeader toggle={toggle}> Saved </ToastHeader>
+                  <ToastBody> Book has been saved </ToastBody>
+                </Toast>
+              </div>
       </CardBody>
     </Card>
   );
