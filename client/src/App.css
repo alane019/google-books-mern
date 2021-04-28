@@ -145,7 +145,7 @@ color: rgb(0, 0, 255);
 text-shadow: rgba(4, 0, 255, 0.9) 1px 1px;
  }
 
- #searchBtn, .form-control{
+ .searchBtn, .form-control{
   background-color:rgba(21, 24, 15, 0.877)  !important;
   width: 3.5rem;
   border: rgba(63, 95, 41, 0.432) solid 1px;
@@ -178,6 +178,13 @@ text-shadow: rgba(4, 0, 255, 0.9) 1px 1px;
   border-bottom: rgba(137, 156, 129, 0.418) solid 2px !important;
   padding-bottom: 5px;
  }
+
+ #notif {
+  color: black !important;
+  font-size: medium;
+  text-shadow: #382f2f38 1px 2px 3px i !important;
+  background-color: #89f589e0 !important;
+}
 
 
 

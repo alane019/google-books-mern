@@ -1,7 +1,8 @@
 import "../App.css";
 import React, { useState } from "react";
 import api from "axios";
-import { Input, InputGroup, Button } from "reactstrap";
+import { Input, InputGroup, Button,
+  Toast, ToastBody, ToastHeader } from "reactstrap";
 
 import { RotateLoader } from "react-spinners";
 import ResultCard from "../components/SearchResult.js";
@@ -21,6 +22,7 @@ function Saved() {
   const handleFormSubmit = () => {
 
     if(searchQuery && (searchQuery.trim().length !== 0)){
+      
     setLoading(true);
     api
       .get(
@@ -35,6 +37,7 @@ function Saved() {
         console.log(err.response);
       });
     }
+
   };
 
   /* -------------------------------------------------------------- */
@@ -51,8 +54,7 @@ function Saved() {
               value={searchQuery}
               onChange={(evt) => setSearchQuery(evt.target.value)}
             />
-
-            <Button id="searchBtn" color="secondary" onClick={handleFormSubmit}>
+            <Button className="searchBtn" color="secondary" onClick={handleFormSubmit}>
               <i className="fas fa-search"></i>
             </Button>
           </InputGroup>
@@ -92,14 +94,9 @@ function Saved() {
           webReaderLink = item.webReaderLink;
         }
      
-        let authors = "";
-        let arrJoin = (arr) => {
-        if(arr){
-            return arr.join(", ")
-          }   
-        }
-
-        authors = arrJoin(item.volumeInfo.authors);
+        let authors = [item.volumeInfo.authors];
+   
+        authors = authors ? authors.join(", ") : "";
    
         return (
           <div className="col-lg-4 mb-3" key={item.id}>

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Button, Toast, ToastBody, ToastHeader } from 'reactstrap';
-import { Card, CardTitle, CardImg, CardBody} from 'reactstrap';
+import { Card, CardTitle, CardImg, CardBody, Button,
+  Toast, ToastBody, ToastHeader} from 'reactstrap';
 import api from "../utils/API.js";
 
 const ResultCard = ({ image, title, description, authors,
@@ -9,23 +9,36 @@ const ResultCard = ({ image, title, description, authors,
 
   let book = {  image, title, description, authors,
    previewLink, googleId, pdf, webReaderLink, pdfIsAvailable  };
-
+  
+   let buttonLabel = "Save book";
+  
    const [show, setShow] = useState(false);
-   const toggle = () => setShow(!show);
+   const toggle = () => {
+     setShow(!show);
+     handleClick();
+    }
 
     console.log({book});
+  
+     
+    // Toast.propTypes = {
+    //   className: PropTypes.string,
+    //   color: PropTypes.string, // default: 'success'
+    //   isOpen: PropTypes.bool,  // default: true
+    //   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    //   // Controls the transition of the toast fading in and out
+    //   // See Fade for more details
+    //   transition: PropTypes.shape(Fade.propTypes),
+    // }
 
   const handleClick = () => {
-    toggle();
-
-
-    console.log(book);
+      console.log(book);
       api.addBook(book)
        .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
        .catch(err => console.error(err));
   }
 
-  return (                     
+  return (             
     <Card style={{ maxHeight: "350", maxWidth: "300px" }} className="flex-parent card-item">
       <CardImg top style={{  margin: "5px", marginLeft: "75px", marginRight: "75px", width: "150px", maxHeight: "200px"}}
        src={image} alt={title} />
@@ -54,14 +67,16 @@ const ResultCard = ({ image, title, description, authors,
                    <div> <a> Authors: {authors} </a>  </div>
         </div>
               <div>
-                <Button  onClick={handleClick} color="primary"> Save book </Button> 
-                <Toast isOpen={show}>
-                  <ToastHeader toggle={toggle}> Saved </ToastHeader>
-                  <ToastBody> Book has been saved </ToastBody>
-                </Toast>
+                <Button  className="save-btn" onClick={handleClick} color="primary"> Save </Button> 
+       
               </div>
       </CardBody>
+        <Toast isOpen={show}>
+          <ToastHeader toggle={toggle}> Saved </ToastHeader>
+          <ToastBody> Book has been saved </ToastBody>
+        </Toast> 
     </Card>
+
   );
 };
 
