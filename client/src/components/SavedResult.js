@@ -5,22 +5,22 @@ import api from "../utils/API.js";
 //This is a result card that will load with data for books saved to the application database
 
 const ResultCard = ({ thumbnail, title, description, authors,
-   previewLink, id,  googleId, pdf, webReaderLink }) => {
+   previewLink, id,  googleId, pdf, webReaderLink, previewLinkText }) => {
 
   let book = {  thumbnail, title, description, authors,
-    previewLink, id, googleId, pdf, webReaderLink  };
+    previewLink, id, googleId, pdf, webReaderLink, previewLinkText  };
 
     console.log("book props, resultCard.js");
     console.log(book);
     console.log({book});
 
-  const handleClick = () => {
-    console.log("book.id in handClick function: ");
-    console.log(book.id);
-      api.removeById(book._id)
-       .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
-       .catch(err => console.error(err));
-  }
+//   const handleClick = () => {
+//     console.log("book.id in handClick function: ");
+//     console.log(book.id);
+//       api.removeById(book._id)
+//        .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
+//        .catch(err => console.error(err));
+//   }
 
   return (                            
     <Card style={{ maxHeight: "350", maxWidth: "300px" }} className="flex-parent card-item">
@@ -35,7 +35,7 @@ const ResultCard = ({ thumbnail, title, description, authors,
           <div className="details info-link buttons-con action-link-wrap"> 
               <a href={previewLink} className="btn-link" 
                 color="default" type="button" target="_blank"
-                rel="noopener noreferrer" > View on Google Books 
+                rel="noopener noreferrer"> View on Google Books 
               </a>
           </div>  
   

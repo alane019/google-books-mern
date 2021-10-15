@@ -34,7 +34,7 @@ const ResultCard = ({ image, title, description, authors,
   const handleClick = () => {
       console.log(book);
       api.addBook(book)
-       .then(res => console.log(` - - -  Axios response in results card:  ${res} - - - `))
+       .then(res =>  console.log(res))
        .catch(err => console.error(err));
   }
 

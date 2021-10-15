@@ -72,7 +72,7 @@ function SavedBookPage() {
           {" "}
           Saved Books
         </h1>
-        <div id="search-form">
+        {/* <div id="search-form">
           <InputGroup size="lg">
             <Input
                style={{opacity: ".001"}}
@@ -80,14 +80,14 @@ function SavedBookPage() {
               placeholder="Seach Saved Books"
               value={searchQuery}
               onChange={(evt) => setSearchQuery(evt.target.value)}
-            />
+            /> */}
             {/* <Button id="searchBtn" color="secondary" onClick={() => {console.log("#searchBtn clicked")}}> */}
-            <Button id="searchBtn" style={{opacity: ".001"}} color="secondary" onClick={() => {console.log("#searchBtn clicked")}}>
+            {/* <Button id="searchBtn" style={{opacity: ".001"}} color="secondary" onClick={() => {console.log("#searchBtn clicked")}}>
               <i className="fas fa-search"> </i>
             </Button>
           </InputGroup>
           <div className="d-flex text-white justify-content-center"></div>
-        </div>
+        </div> */}
       </div>
     );
   };
@@ -132,7 +132,7 @@ function SavedBookPage() {
               title={arrayItem.title}
               description={arrayItem.description}
               authors={arrayItem.authors}
-              previewLink={arrayItem.link}
+              previewLink={arrayItem.previewLink}
               infoLink={arrayItem.link}
               id={arrayItem._id}
               googleId={arrayItem.googleId}

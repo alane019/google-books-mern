@@ -8,6 +8,7 @@ const bookSchema = new Schema({
   desription: String,
   image: String,
   link: String,
+  previewLink: String,
   date: { type: Date, default: Date.now },
   googleId: String,
   pdf: String,
