@@ -32,21 +32,21 @@ const ResultCard = ({ thumbnail, title, description, authors,
             {description}
           </div>
 
-          <div className="details info-link"> 
+          <div className="details info-link buttons-con action-link-wrap"> 
               <a href={previewLink} className="btn-link" 
                 color="default" type="button" target="_blank"
                 rel="noopener noreferrer" > View on Google Books 
               </a>
           </div>  
   
-           <div className="details pdf"> 
+           {/* <div className="details pdf"> 
            { pdf != "Not available"
                ?   <a href={pdf} className="btn-link" 
                color="default" type="button" target="_blank"
                rel="noopener noreferrer" > PDF Available</a> 
                : <div> </div>
            }   
-          </div>  
+          </div>   */}
 
           <br></br>
         <div className="details"> <i> Authors: {authors} </i> </div>

@@ -54,14 +54,14 @@ const ResultCard = ({ image, title, description, authors,
               </a>
           </div>  
   
-           <div className="details pdf buttons-con action-link-wrap"> 
+           {/* <div className="details pdf buttons-con action-link-wrap"> 
            {pdfIsAvailable
                ?   <a href={pdf} className="btn-link" 
                color="default" type="button" target="_blank"
                rel="noopener noreferrer" > PDF Available</a> 
                : <div> </div>
            }   
-          </div>  
+          </div>   */}
           <br></br>
         <div className="details"> 
                    <div> <a> Authors: {authors} </a>  </div>
