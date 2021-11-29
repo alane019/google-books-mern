@@ -46,6 +46,9 @@ function Saved() {
     return (
       <div id="page" className="filter">
         <h1 id="page-title" className="text-center"> Google Books Data Explorer</h1>
+		{/* temporary notifcations will appear here */} 
+        <div display="none;" className="off" id="notif-panel"></div>
+
         <div id="search-form">
           <InputGroup size="lg">
             <Input
