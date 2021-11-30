@@ -1,17 +1,13 @@
 import "../App.css";
 import React, { useState } from "react";
 import api from "axios";
-import { Input, InputGroup, Button,
-  Toast, ToastBody, ToastHeader } from "reactstrap";
+import { Input, InputGroup, Button } from "reactstrap";
 
 import { RotateLoader } from "react-spinners";
 import ResultCard from "../components/SearchResult.js";
 
- //This page is used to search Google Books Internet database
-
 let maxResults = 20;
 
-// Main app loop ///
 function Saved() {
   // set initial state values
   const [searchQuery, setSearchQuery] = useState("");
@@ -40,13 +36,11 @@ function Saved() {
 
   };
 
-  /* -------------------------------------------------------------- */
   // search form
   const SearchForm = () => {
     return (
       <div id="page" className="filter">
         <h1 id="page-title" className="text-center"> Google Books Data Explorer</h1>
-		{/* temporary notifcations will appear here */} 
         <div display="none;" className="off" id="notif-panel"></div>
 
         <div id="search-form">
@@ -67,14 +61,11 @@ function Saved() {
     );
   };
 
-  /* -------------------------------------------------------------- */
-
   const handleResultCards = () => {
 
     if (!loading) {
       const queryResultItems = resultCards.map(
         (item, id) => {
-          //if thumbnail image is included, replace the default 'missing thumbnail' image url,
         let image = "./books-missing-thumb.png";
         if (item.volumeInfo.imageLinks) {
           image = item.volumeInfo.imageLinks.thumbnail;

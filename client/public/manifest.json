@@ -1,6 +1,6 @@
 {
-  "short_name": "Books with MERN",
-  "name": "Google Books MERN",
+  "short_name": "Books",
+  "name": "Google Books Data Explorer",
   "icons": [
     {
       "src": "favicon.png",

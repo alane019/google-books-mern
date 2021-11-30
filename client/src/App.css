@@ -130,8 +130,6 @@ h1{
 
 }   
 
-
-
 .card-item .card {
   background-color: rgba(0, 0, 0, 0.555);
  }
@@ -174,16 +172,48 @@ text-shadow: rgba(4, 0, 255, 0.9) 1px 1px;
 
  }
 
- .nav-tabs{
-  border-bottom: rgba(137, 156, 129, 0.418) solid 2px !important;
-  padding-bottom: 5px;
+.btn-primary {
+	background-color: #133436;
+	background: radial-gradient(
+		#0b1c22bf,
+		#0913176d
+		) !important;
+	color: rgb(150, 223, 91) !important;
+	text-shadow: rgb(8, 31, 32) 0px 0px 1px !important;
+	border:  rgba(36, 91, 45, 0.537) solid  2.5px !important;
+	box-shadow: rgba(11, 155, 44, 0.666) 0 0 1px 0 !important;
+	letter-spacing: 4.1px;
+	margin: 12px;
+	width: 8rem;
+	font-family: 'Fira Sans', sans-serif !important;
  }
 
- #notif {
-  color: black !important;
-  font-size: medium;
-  text-shadow: #382f2f38 1px 2px 3px i !important;
-  background-color: #89f589e0 !important;
+ 
+.btn-primary:hover {
+	color: rgba(152, 212, 11, 0.966) !important;
+	color: #00ffaedb !important;
+	background: linear-gradient(
+		rgba(13, 17, 0, 0.819),
+		rgba(7, 8, 0, 0.558)
+		) !important;
+		border:   #00ffaea1 solid  2.5px !important;
+	font-weight: 575;
+}
+
+ .nav-tabs{
+	border-bottom: rgba(137, 156, 129, 0.418) solid 2px !important;
+	padding-bottom: 5px;
+ }
+
+ #notif-panel {
+  color: #00ffae !important;
+  font-size: medium;  
+  font-family:  'Arial Narrow Bold', sans-serif;
+  font-family: 'Fira Sans', sans-serif !important;
+  letter-spacing: 3px;
+  text-shadow: #141714db 1px 2px 3px i !important;
+  width: 14rem;
+  margin: auto;
 }
 
 
